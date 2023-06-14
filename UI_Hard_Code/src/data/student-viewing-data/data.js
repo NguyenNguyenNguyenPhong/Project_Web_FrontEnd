@@ -121,7 +121,7 @@ export const courses = [
     },
     {
         id: 3,
-        img: "789",
+        // img: "789",
         title: "Modern Ethical Hacking - Complete Course",
         img: "images/studentsViewing/suggestedCourses/sc3.png",
         desc:"Vonnie Hudson",
