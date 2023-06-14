@@ -27,7 +27,7 @@ export default function SignIn() {
                 hoặc <a className={styles.helper_author_footer__link} href='/'>Quên mật khẩu</a>
                 </div>
             <div className= {styles.helpers_auth_separator__2mEsg} ></div>
-            <div>Bạn không có tài khoản? Hãy <a className={styles.helper_author_footer__link} href='/'>Đăng ký</a></div>
+            <div>Bạn không có tài khoản? Hãy <p className={styles.helper_author_footer__link} href='/'>Đăng ký</p></div>
             <div><a className={styles.helper_author_footer__link} href='/'>Đăng nhập bằng tên tổ chức của bạn</a></div>
             </div>
         </div>
