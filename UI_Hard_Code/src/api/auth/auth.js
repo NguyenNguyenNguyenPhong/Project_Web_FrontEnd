@@ -6,3 +6,10 @@ export function signUp(data = {}) {
         data
     })
 }
+export function signIn(data = {}) {
+    return request({
+        url: '/auth/authenticate',
+        method: 'POST',
+        data
+    })
+}
