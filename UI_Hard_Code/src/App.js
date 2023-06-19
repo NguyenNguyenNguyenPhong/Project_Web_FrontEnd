@@ -13,7 +13,7 @@ import BlogContainer from './views/blog/BlogContainer'
 function App() {
   return (
     <>
-      <Routes>
+      <Routers />
         <Route path= "/*" element = { <Home />} />
         <Route path = "/signUp" element = { <SignUp />} />
         <Route path = "/signIn" element = { <SignIn />} />
