@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './style.css';
 
-const VideoList = ({ onVideoClick, id }) => {
+const VideoList = ({ onVideoClick, id, exam }) => {
   let [videos, setVideos] = useState([]);
+  let videoExam = (exam == "Hiện không có bài tập" ? "" : "có bài tập")
 
   useEffect(() => {
     // Fetch video data from API using Axios
@@ -46,6 +47,7 @@ const VideoList = ({ onVideoClick, id }) => {
         {videos.map((video, index) => (
           <li key={index} onClick={() => handleClick(video)}>
               <h3>{index + 1}. {video.description}</h3>
+              {/* <h5 style={{color:"red", margin:"0px 0px 0px 20px"}}>{videoExam}</h5> */}
           </li>
         ))}
       </ul>
