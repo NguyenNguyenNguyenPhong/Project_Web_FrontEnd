@@ -1,10 +1,45 @@
 /* Styles for the blog list */
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.heading {
+    font-size: 24px;
+    margin-left: 60px;
+}
+
+.recommend-topic {
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 20%;
+    border-radius: 8px; /* Add border-radius property */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box-shadow property */
+}
+
+.image {
+    width: 80%;
+    max-height: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
 .blog-list {
     list-style: none;
     padding: 0;
     margin-left: 40px;
   }
   
+  .blog-list-recommendation {
+    margin-left: 50px;
+    display: flex; /* Add this line to make each blog item appear on its own line */
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    width:30%;
+  }
+
+
   .blog-list-item {
     display: flex; /* Add this line to make each blog item appear on its own line */
     margin-bottom: 20px;
@@ -12,8 +47,10 @@
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width:60%;
+    width:100%;
   }
+
+  
   
   .blog-list-item .image {
     width: 15%;
