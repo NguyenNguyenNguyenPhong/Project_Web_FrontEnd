@@ -9,9 +9,15 @@ import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles(theme => ({
     colorTextCategory: {
         color: '#000000',
-        padding: '0 8px',
-        fontSize: '16px'
+        padding: '0 6px',
+        fontSize: '13px',
+        '&:hover': {
+            // Các thuộc tính CSS áp dụng khi phần tử được hover
+            textDecoration: 'underline',
+            cursor: 'pointer',
+          },
     }
+    
 }))
 const CategoryList = () => {
     useEffect(() => {
@@ -42,7 +48,7 @@ const CategoryList = () => {
           }}
         >
           <Toolbar disableGutters sx={{ my: "auto", gap: 1 }}>
-              {category.map((item) => (<h3 className={classes.colorTextCategory} key={item.categoryId}>{item.categoryName}</h3>))}
+              {category.map((item) => (<a className={classes.colorTextCategory} key={item.categoryId}>{item.categoryName}</a>))}
           </Toolbar>
       </AppBar>
     </Box>
