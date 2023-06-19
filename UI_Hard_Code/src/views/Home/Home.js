@@ -10,7 +10,7 @@ import CourseDetail from '../Course/CourseDetail';
 import HomeBody from './HomeBody';
 import HeaderContainer from '../../container/HeaderContainer';
 import FooterContainer from '../../container/FooterContainer';
-import MyBlog from '../blog/MyBlog';
+// import MyBlog from '../blog/MyBlog';
 // import FooterContainer from './../../container/FooterContainer';
 // import request from '../../utils/request'
 // import { useEffect } from 'react';
@@ -33,7 +33,7 @@ const Home = () => {
             <Routes>
                 <Route path= "/*" element = { <HomeBody />} />
                 <Route path= "course/:id/*" element =  { <CourseDetail /> } />      
-                <Route path= "/blog/my-blog" element =  { <MyBlog /> } />      
+                {/* <Route path= "/blog/my-blog" element =  { <MyBlog /> } />       */}
             </Routes>
             <FooterContainer />
         </div>

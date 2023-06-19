@@ -103,17 +103,21 @@ const Navigation = () => {
               <ShoppingCartOutlinedIcon sx={{ fontSize: 24 }} />
             </RightTooltipWithStyle>
           </MenuButtom>
-          <LinkButton
-            fontSize="1.4rem"
-            color="white"
-            height="4rem"
-            width="8rem"
-          >
-            Log in
-          </LinkButton>
-          <LinkButton fontSize="1.4rem" height="4rem" width="8rem">
-            Sign up
-          </LinkButton>
+            {localStorage.getItem('token') ? (<> </>) : (
+              <>
+                <LinkButton
+                  fontSize="1.4rem"
+                  color="white"
+                  height="4rem"
+                  width="8rem"
+                >
+                  Log in
+                </LinkButton>
+                <LinkButton fontSize="1.4rem" height="4rem" width="8rem">
+                  Sign up
+                </LinkButton>
+              </>
+            )}
           <LinkButton color="white" height="4rem" width="4rem">
             <LanguageIcon sx={{ fontSize: "2rem" }} />
           </LinkButton>

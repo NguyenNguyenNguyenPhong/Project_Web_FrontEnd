@@ -11,3 +11,10 @@ export function getCourseDetail(id) {
         method: 'GET',
     })
 }
+export function getSegmentList(courseId) {
+    console.log('segment api đây', courseId)
+    return request({
+        url: `/course-segments/course/${courseId}`,
+        method: 'GET',
+    })
+}

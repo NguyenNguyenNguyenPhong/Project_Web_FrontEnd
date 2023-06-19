@@ -5,6 +5,7 @@ import CourseThumbnail from './component/CourseThumbnail'
 import { useParams } from 'react-router-dom';
 import { getCourseDetail } from '../../api/course/course';
 import CourseDescribe from './component/CourseDescribe';
+import CourseSegment from './component/CourseSegment';
 
 
 const CourseDetail = () => {
@@ -28,6 +29,13 @@ const CourseDetail = () => {
             paddingBottom: "20px"
 
         },
+        content_title: {
+            margin:" 20px 0",
+            fontSize: "20px",
+        },
+        course_segment: {
+            marginBottom: '100px'
+        }
     })
     )
     const classes = useStyle();
@@ -80,9 +88,10 @@ const CourseDetail = () => {
 
                 </Grid>
                 </Paper>
-                <Grid>
+                <h3 className={classes.content_title}>Nội dung khóa học</h3>
+                <Grid className={classes.course_segment} xs={6}>
                     <Paper elevation = {0} >
-
+                    <CourseSegment  courseId = {courseDetail.courseID}/>
                     {/* <DetailMenu data = {productInfor}/> */}
                     </Paper>
                 </Grid>
