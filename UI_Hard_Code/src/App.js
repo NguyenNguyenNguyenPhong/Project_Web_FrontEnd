@@ -15,12 +15,13 @@ import SignIn from "./views/auth/signIn/signIn";
 function App() {
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path= "/*" element = { <Home />} />
         <Route path = "/signUp" element = { <SignUp />} />
         <Route path = "/signIn" element = { <SignIn />} />
        
-      </Routes>
+      </Routes> */}
+      <Routers />
       {/* Yuko */}
       {/* <HeaderContainer /> */}
       {/* <Router>

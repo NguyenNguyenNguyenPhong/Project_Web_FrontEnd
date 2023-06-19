@@ -19,7 +19,6 @@ import HeaderContainer from '../container/HeaderContainer';
 const Routers = () => {
   return (
     <Routes >
-      <HeaderContainer />
         <Route exact path="/" element={<Home />} /> 
         <Route path="/course/:id" element={<CourseDetail/>} />
       <Route element={<FooterContainer />} />
