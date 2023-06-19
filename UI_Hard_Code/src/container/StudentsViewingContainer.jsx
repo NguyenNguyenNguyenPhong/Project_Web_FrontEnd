@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { courses, sugestedCourses } from "../data/student-viewing-data/data";
 
@@ -13,6 +13,7 @@ import {
 
 import { useState } from 'react';
 import ItemsCarousel from "react-items-carousel";
+import { getCourseList } from "../api/course/course";
 
 
 const Container = styled.div`
@@ -68,7 +69,38 @@ const Arrow = styled.div`
 const CopyStudentsViewingContainer = () => {
   const [activeItemIndex1, setActiveItemIndex1] = useState(0);
   const [activeItemIndex2, setActiveItemIndex2] = useState(0);
+  const [courseList, setCourseList] = useState([])
+  useEffect(() => {
+        // Mã lệnh được thực thi chỉ một lần khi component được render lần đầu tiên
+        console.log('useEffect được gọi chỉ một lần');
+        fnGetCourseList()
+      }, []);
+
+  const fnGetCourseList = async () => {
+    await getCourseList()
+          .then((res) => {
+            let fakeCourseList = []
+            res.data.forEach(ele => {
+              let course = {
+                id: ele.courseID,
+                img: ele.courseImg,
+                title: ele.courseName,
+                desc: ele.courseDescription,
+                rateScore: ele.courseTotalStudent,
+                reviewerNum: ele.courseTotalStudent,
+                price: ele.courseCost,
+                onSale: false,
+                onSalePrice: ele.courseCost,
+                mark: "Bestseller"
+              }
+              fakeCourseList.push(course)
+            })
+            setCourseList(fakeCourseList)
+            console.log('course list', res.data)
+          })
+  }
   const chevronWidth = 50;
+  
 
   return (
     <Container>
@@ -97,7 +129,7 @@ const CopyStudentsViewingContainer = () => {
               chevronWidth={chevronWidth}
             >
       
-                {courses.map((item) => (
+                {courseList.map((item) => (
                     <Course item={item} key={item.id} />
                 ))}
 
@@ -134,7 +166,7 @@ const CopyStudentsViewingContainer = () => {
               chevronWidth={chevronWidth}
             >
       
-                {sugestedCourses.map((item) => (
+                {courseList.map((item) => (
                     <Course item={item} key={item.id} />
                 ))}
 

@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from './signUp.module.css';
 import { useState } from 'react';
 import { signUp } from '../../../api/auth/auth';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function SignUp() {
@@ -9,6 +10,7 @@ export default function SignUp() {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [passWord, setPassWord] = useState('')
+    const navigate = useNavigate();
     const handleFirstNameChange = (value) => {
       setFirstName(value)
     }
@@ -34,6 +36,9 @@ export default function SignUp() {
       })
       console.log('ok')
     }
+    const redirectSignIn= () =>  {
+      navigate('/signIn')
+    }
     return (
       <div>
         <div className={styles.singIn_Field}>
@@ -53,10 +58,10 @@ export default function SignUp() {
             <button className={`${styles.singIn_Input} ${styles.submit_button}`} type='submit' onClick={handleSignUp}>Đăng ký</button>
             <div className={styles.help_auth__footer}>
                 <div className={styles.help_signUp__wrapper }>
-                Bằng việc đăng ký, bạn đồng ý với <a className={styles.helper_author_footer__link} href='/'>Điều khoản sử dụng và Chính sách về quyền riêng tư.</a>
+                Bằng việc đăng ký, bạn đồng ý với <p className={styles.helper_author_footer__link} >Điều khoản sử dụng và Chính sách về quyền riêng tư.</p>
                 </div>
             <div className= {styles.helpers_auth_separator__2mEsg} ></div>
-            <div>Bạn đã có tài khoản? Hãy <a className={styles.helper_author_footer__link_sign_in} href='/'>Đăng nhập</a></div>
+            <div>Bạn đã có tài khoản? Hãy <p onClick={redirectSignIn} className={styles.helper_author_footer__link_sign_in} href='/'>Đăng nhập</p></div>
             {/* <div><a className={styles.helper_author_footer__link} href='/'>Đăng nhập bằng tên tổ chức của bạn</a></div> */}
             </div>
         </div>
