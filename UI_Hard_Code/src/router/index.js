@@ -8,6 +8,8 @@ import VideoDisplayer from '../views/video/VideoContainer';
 import TeacherContainer  from '../views/teacher/TeacherComponent';
 import  ParentComponent from '../views/searchResult/ContainerSearchResult'
 import TeacherCourseContainer from '../views/teacher/TeacherCourseContainer';
+import BlogContainer from "../views/blog/BlogContainer"
+
 const Routers = () => {
   return (
     <Routes >
@@ -19,6 +21,7 @@ const Routers = () => {
       <Route path="/teacher" element={<TeacherContainer />} />
       <Route path="/teacher/:id" element={<TeacherCourseContainer />} />
       <Route path="/search" element={<ParentComponent />} />
+      <Route path="/blog" element={<BlogContainer />} />
     </Routes>
   );
 };
