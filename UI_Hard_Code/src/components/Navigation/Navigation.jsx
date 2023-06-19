@@ -54,7 +54,7 @@ const Navigation = () => {
           <Box>
             <img
               src="/images/header/logo-udemy.svg"
-              alt="Udemy"
+              alt="BK sera"
               width="91"
               height="34"
             />
@@ -81,7 +81,7 @@ const Navigation = () => {
               }
               placement="bottom-end"
             >
-              <span>Udemy Business</span>
+              <span>Business</span>
             </RightTooltipWithStyle>
           </MenuButtom>
 
@@ -92,7 +92,7 @@ const Navigation = () => {
               }
               placement="bottom-end"
             >
-              <span>Teach on Udemy</span>
+              <span>Teach on Bk sera</span>
             </RightTooltipWithStyle>
           </MenuButtom>
           <MenuButtom>
