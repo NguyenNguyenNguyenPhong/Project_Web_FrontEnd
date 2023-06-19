@@ -23,6 +23,9 @@ export default function SignIn() {
         await signIn(inForSignup)
         .then((res) => {
           if(res.data.access_token) {
+
+            localStorage.setItem('jwtToken', res.data.access_token);
+
             console.log("kkk", res.data.access_token)
             localStorage.setItem('token', res.data.access_token)
             navigate('/')

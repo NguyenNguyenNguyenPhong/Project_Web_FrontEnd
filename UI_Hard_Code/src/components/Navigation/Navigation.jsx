@@ -15,7 +15,9 @@ const udemyBusinessMessage =
   "Get your team access to over 6,000 top Udemy courses, anytime, anywhere.";
 const techOnUdemy =
   "Turn what you know into an opportunity and reach millions around the world.";
-const Navigation = () => {
+const Navigation = ({onSearch}) => {
+
+
   const RightTooltipWithStyle = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))(({ theme }) => ({
@@ -38,6 +40,14 @@ const Navigation = () => {
       padding: 0,
     },
   }));
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      const input = event.target.value;
+      console.log(input)
+      onSearch(input);
+    }
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -68,7 +78,9 @@ const Navigation = () => {
             </LeftTooltipWithStyle>
           </MenuButtom>
           <Box sx={{ flexGrow: 1 }}>
-            <SearchBar />
+            <SearchBar 
+                    onChange={handleKeyDown}
+                    />
           </Box>
 
           <MenuButtom>
