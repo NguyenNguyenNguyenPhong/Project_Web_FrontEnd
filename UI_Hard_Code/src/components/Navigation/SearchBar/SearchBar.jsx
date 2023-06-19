@@ -1,8 +1,17 @@
 import { styled, alpha } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
+import React, { useState } from 'react';
 
-const SearchBar = () => {
+const SearchBar = ({onChange}) => {
+  
+  // const handleKeyDown = (event) => {
+  //   if (event.key === 'Enter') {
+  //     const input = event.target.value;
+  //     onSearch(input);
+  //   }
+  // };
+
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: 50,
@@ -40,9 +49,11 @@ const SearchBar = () => {
         <SearchIcon sx={{ fontSize: 24 }} />
       </SearchIconWrapper>
       <StyledInputBase
-        placeholder="Search for anything"
-        inputProps={{ "aria-label": "search" }}
+        // placeholder="Search for anything"
+        // inputProps={{ "aria-label": "search" }}
+        onKeyDown={onChange}
       />
+      
     </Search>
   );
 };

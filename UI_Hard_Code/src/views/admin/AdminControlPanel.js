@@ -67,8 +67,9 @@ const fetchJson = (url, options = {}) => {
   console.log(dataProvider)
   return (
     <div>
-      <Admin dataProvider={dataProviderWithTransform}>
+      <Admin  dashboard={AdminPanel} dataProvider={dataProviderWithTransform}>
         <Resource name="course" options={{ label: 'Courses' }} list={listCourse} edit={editCourse} create={createCourse} />
+        <Resource name="blog" options={{ label: 'blog' }} list={listCourse} edit={editCourse} create={createCourse} />
         {/* Add other resources */}
       </Admin>
     </div>
