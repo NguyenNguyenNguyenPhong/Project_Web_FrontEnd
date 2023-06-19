@@ -18,3 +18,9 @@ export function getSegmentList(courseId) {
         method: 'GET',
     })
 }
+export function getDocList(courseId) {
+    return request({
+        url: `/document/course/${courseId}`,
+        method: 'GET',
+    })
+}
