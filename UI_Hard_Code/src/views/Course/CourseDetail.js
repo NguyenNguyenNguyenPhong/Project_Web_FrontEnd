@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { getCourseDetail } from '../../api/course/course';
 import CourseDescribe from './component/CourseDescribe';
 import CourseSegment from './component/CourseSegment';
+import DocCourse from './component/DocCourse';
 
 
 const CourseDetail = () => {
@@ -88,6 +89,13 @@ const CourseDetail = () => {
 
                 </Grid>
                 </Paper>
+                <h3 className={classes.content_title}>Tài liệu học tập</h3>
+                <Grid className={classes.course_segment} xs={6}>
+                    <Paper elevation = {0} >
+                    <DocCourse  courseId = {courseDetail.courseID} />
+                    {/* <DetailMenu data = {productInfor}/> */}
+                    </Paper>
+                </Grid>
                 <h3 className={classes.content_title}>Nội dung khóa học</h3>
                 <Grid className={classes.course_segment} xs={6}>
                     <Paper elevation = {0} >

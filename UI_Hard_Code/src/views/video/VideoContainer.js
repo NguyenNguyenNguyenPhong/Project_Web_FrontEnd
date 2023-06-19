@@ -36,7 +36,7 @@ const VideoContainer = () => {
         if(resObj[0] !==  undefined) {
           alert("bài học này có phần bài tập")
         }
-      })
+    })
       .catch((error) => {
         console.error('Error fetching video data:', error);
       });

@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 // import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -31,6 +32,7 @@ import Paper from '@mui/material/Paper';
 const CourseSegment = ({courseId}) => {
     console.log('id coursesegment', courseId)
     const [segmentList, setSegmentList] = useState([])
+    const navigate = useNavigate();
     useEffect(() => {
         // Mã lệnh được thực thi chỉ một lần khi component được render lần đầu tiên
         console.log('useEffect được gọi chỉ một lần');
@@ -46,8 +48,8 @@ const CourseSegment = ({courseId}) => {
             // 
            })
       }
-    const handleRowClick = () => {
-        console.log('ok')
+    const handleRowClick = (segmentID) => {
+      navigate(`/learn/course/${segmentID}`)
     }
     return (
         <TableContainer component={Paper}>
@@ -66,9 +68,18 @@ const CourseSegment = ({courseId}) => {
               <TableRow
                 key={segment.segmentID}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                onClick={() => handleRowClick(segment)}
+                onClick={() => handleRowClick(segment.segmentID)}
               >
-                <TableCell component="th" scope="row" sx={{ fontSize: 12 }}>
+                <TableCell TableCell component = "th"
+                scope = "row"
+                sx = {
+                  {
+                    fontSize: 12,
+                    "&:hover": {
+                      cursor: "pointer",
+                    },
+                  }
+                } >
                   {segment.description}
                 </TableCell>
               </TableRow>
