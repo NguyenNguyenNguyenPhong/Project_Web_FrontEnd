@@ -7,16 +7,17 @@ const VideoList = ({ onVideoClick, id }) => {
 
   useEffect(() => {
     // Fetch video data from API using Axios
-    axios.get(`http://localhost:8080/api/lecture/${id}`, {
+    axios.get(`http://localhost:8080/api/course-segments/course/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('jwtToken')}`,
       },
     })
       .then((response) => {
-        let resObj = []
-        resObj.push(response.data)
+        
+        let resObj = response.data
+
         for(let i = 0; i < resObj.length; i++) {
-          let url = resObj[i]["lectureVideoLink"] // Update the videos state with the retrieved data      
+          let url = resObj[i]["content"] // Update the videos state with the retrieved data      
           const startIndex = url.indexOf("v=") + 2; // Adding 2 to skip "v="
           const endIndex = url.indexOf("&", startIndex); // Find the first occurrence of "&" after "v="
 
@@ -32,6 +33,7 @@ const VideoList = ({ onVideoClick, id }) => {
       });
   }, []);
 
+  console.log(videos)
 
   const handleClick = (embedId) => {
     onVideoClick(embedId); // Call the onVideoClick handler with the selected embedId
@@ -43,9 +45,7 @@ const VideoList = ({ onVideoClick, id }) => {
       <ul>
         {videos.map((video, index) => (
           <li key={index} onClick={() => handleClick(video)}>
-            <a href={video.link} target="_blank" rel="noopener noreferrer">
-              <h3>{index + 1}. {video.lectureName}</h3>
-            </a>
+              <h3>{index + 1}. {video.description}</h3>
           </li>
         ))}
       </ul>

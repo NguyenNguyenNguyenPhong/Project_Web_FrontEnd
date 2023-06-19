@@ -16,7 +16,7 @@ const VideoContainer = () => {
   const handleVideoClick = (video) => {
     setEmbedId(video.embedId); // Update the embedId state when a video is clicked
     setName(video.lectureName);
-    setDescription(video.lectureDescription)
+    setDescription(video.description)
   };
 
   return (
