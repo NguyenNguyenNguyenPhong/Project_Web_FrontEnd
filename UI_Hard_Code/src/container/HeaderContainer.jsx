@@ -6,7 +6,7 @@ const HeaderContainer = () => {
   return (
     <div style={{ position: "relative" }}>
       <Navigation />
-      <Header />
+      {/* <Header /> */}
     </div>
   );
 };
