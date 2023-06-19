@@ -21,7 +21,9 @@ service.interceptors.request.use(
     }
     const token = localStorage.getItem('token')? localStorage.getItem('token'): null
     console.log('token', token)
-    config.headers["Authorization"] = token;
+    if(token) {
+      config.headers["Authorization"] = 'Bearer ' + token;
+    }
     return config;
   },
   (error) => {
@@ -36,10 +38,10 @@ service.interceptors.response.use(
     console.log('jjj', data)
     const headers = response.headers;
     console.log('jjjjê2e', headers)
-    if(data.access_token != undefined && data.access_token != '') {
-      localStorage.setItem('token', data.access_token)
-      console.log('token', localStorage.getItem('token'))
-    }
+    // if(data.access_token != undefined && data.access_token != '') {
+    //   localStorage.setItem('token', data.access_token)
+    //   console.log('token', localStorage.getItem('token'))
+    // }
     // if (headers.authorization != undefined) {
     //   console.log('lot to bo')
     //   // store.commit("authUser/SET_TOKEN", headers.authorization);

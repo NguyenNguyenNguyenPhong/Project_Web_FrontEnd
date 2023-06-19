@@ -3,6 +3,7 @@ import React from 'react'
 import { Star, StarHalf } from '@mui/icons-material';
 
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -120,10 +121,15 @@ const CourseMark = styled.div`
 const Course = ( {item} ) => {
   let increment =0;
   let max =5;
+  const navigate = useNavigate();
+  const handleClick = () => {
+    console.log("redirect detail component")
+    navigate(`/course/${item.id}`)
+  }
 
   return (
 
-    <Container>
+    <Container onClick={handleClick}>
         <CourseImgWrapper>
             <CourseImg src={item.img} alt={item.title}></CourseImg>
         </CourseImgWrapper>
