@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Video from './VideoDisplayer';
-import VideoList from './VideoList';
+import VideoList from './VideoList2';
 import './style.css';
 import { useParams } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation'
 import FooterContainer from './../../container/FooterContainer';
 import axios from 'axios';
+import { Link, useHistory } from 'react-router-dom';
 
 const VideoContainer = () => {
-  const { id } = useParams();
-  const [embedId, setEmbedId] = useState(null); // Initial embedId state
+  const { id, videoid } = useParams();
+  const [embedId, setEmbedId] = useState(videoid); // Initial embedId state
   const [name, setName] = useState(null); 
   const [description, setDescription] = useState(null); 
   const [segment, setSegment] = useState(2); 

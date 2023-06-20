@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './style.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const VideoList = ({ onVideoClick, id, exam }) => {
+    const navigate = useNavigate();
   let [videos, setVideos] = useState([]);
   let videoExam = (exam == "Hiện không có bài tập" ? "" : "có bài tập")
 
@@ -37,6 +39,7 @@ const VideoList = ({ onVideoClick, id, exam }) => {
 
   const handleClick = (embedId) => {
     onVideoClick(embedId); // Call the onVideoClick handler with the selected embedId
+    navigate(`/learn/course/${id}/${embedId.embedId}`);
   };
 
   return (
