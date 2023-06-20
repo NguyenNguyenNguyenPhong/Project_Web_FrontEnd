@@ -2,24 +2,21 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './style.css'
 
-const BlogPage = () => {
+const LecturePage = () => {
   const [users, setUsers] = useState([]);
-  const [blogID, setBlogID] = useState('');
-  const [category, setCategory] = useState('');
-  const [name, setName] = useState('')
+  const [segmentID, setSegmentID] = useState('');
+  const [description, setDescription] = useState('');
   const [content, setContent] = useState('')
-  const [image, setImage] = useState('')
-  const [userID, setUserID] = useState('')
+  const [courseID, setCourseID] = useState('')
 
   const [selectedUserId, setSelectedUserId] = useState(null);
-
   useEffect(() => {
     getUsers();
   }, []);
 
   const getUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/blog',{
+      const response = await axios.get('http://localhost:8080/api/coursesegment',{
         headers: {
           Authorization: `Bearer ${localStorage.getItem('jwtToken')}`,
         },
@@ -32,7 +29,7 @@ const BlogPage = () => {
 
   const createUser = async () => {
     try {
-      await axios.post('http://localhost:8080/api/blog', {    category, name, content, image, userID },{
+      await axios.post('http://localhost:8080/api/blog', {    segmentID, description, content, content, courseID },{
         headers: {
           Authorization: `Bearer ${localStorage.getItem('jwtToken')}`,
         },
@@ -44,7 +41,6 @@ const BlogPage = () => {
       setImage('')
       setUserID('')
       getUsers();
-      alert("tạo mới blog thành công")
     } catch (error) {
       console.error('Error creating user:', error);
     }
@@ -65,7 +61,6 @@ const BlogPage = () => {
       setUserID('')
       setSelectedUserId(null);
       getUsers();
-      alert("cập nhật blog thành công")
     } catch (error) {
       console.error('Error updating user:', error);
     }
@@ -90,8 +85,6 @@ const BlogPage = () => {
     setContent(user.content)
     setImage(user.image)
     setName(user.name)
-    setUserID(user.userID)
-    setSelectedUserId(user.blogID);
   };
 
   return (
@@ -183,5 +176,5 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default LecturePage;
 

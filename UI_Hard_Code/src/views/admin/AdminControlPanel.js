@@ -71,6 +71,7 @@ const AdminPage = () => {
     setLastUpdate('')
     setCategory('')
     setUserID('')
+    setSelectedUserId(null)
   }
 
   const updateUser = async () => {
