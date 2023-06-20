@@ -9,6 +9,7 @@ import TeacherContainer from './views/teacher/TeacherComponent'
 import TeacherCourseContainer from './views/teacher/TeacherCourseContainer'
 import ParentComponent from './views/searchResult/ContainerSearchResult'
 import BlogContainer from './views/blog/BlogContainer'
+import ContainerEachVideo from './views/video/VideoPlayerForEachVideo'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path = "/signUp" element = { <SignUp />} />
         <Route path = "/signIn" element = { <SignIn />} />
         <Route path="/learn/course/:id" element={<VideoDisplayer />} />
+        <Route path="/learn/course/:id/:videoid" element={<ContainerEachVideo />} />
         <Route path="/teacher" element={<TeacherContainer />} />
         <Route path="/teacher/:id" element={<TeacherCourseContainer />} />
         <Route path="/search" element={<ParentComponent />} />

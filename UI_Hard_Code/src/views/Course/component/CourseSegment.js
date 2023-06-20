@@ -48,8 +48,11 @@ const CourseSegment = ({courseId}) => {
             // 
            })
       }
-    const handleRowClick = (segmentID) => {
-      navigate(`/learn/course/${segmentID}`)
+    const handleRowClick = (segmentID, courseID) => {
+      const startIndex = segmentID.indexOf("v=") + 2; // Adding 2 to skip "v="
+      const endIndex = segmentID.indexOf("&", startIndex); // Find the first occurrence of "&" after "v="
+      const videoId = segmentID.substring(startIndex, endIndex);
+      navigate(`/learn/course/${courseID}/${videoId}`)
     }
     return (
         <TableContainer component={Paper}>
@@ -68,7 +71,7 @@ const CourseSegment = ({courseId}) => {
               <TableRow
                 key={segment.segmentID}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                onClick={() => handleRowClick(segment.segmentID)}
+                onClick={() => handleRowClick(segment.content, segment.courseID)}
               >
                 <TableCell TableCell component = "th"
                 scope = "row"
