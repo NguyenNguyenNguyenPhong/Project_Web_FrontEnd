@@ -2,9 +2,10 @@ import { styled, alpha } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SearchBar = ({onChange}) => {
-  
+  const navigate = useNavigate();
   // const handleKeyDown = (event) => {
   //   if (event.key === 'Enter') {
   //     const input = event.target.value;
@@ -43,15 +44,25 @@ const SearchBar = ({onChange}) => {
       fontSize: 14,
     },
   }));
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      // Navigate to the desired URL when Enter is pressed
+      navigate(`/search`);
+    }
+  };
+
   return (
     <Search>
       <SearchIconWrapper>
         <SearchIcon sx={{ fontSize: 24 }} />
       </SearchIconWrapper>
       <StyledInputBase
-        // placeholder="Search for anything"
+        placeholder="Search for anything"
         // inputProps={{ "aria-label": "search" }}
+        inputProps={{ autoComplete: "off" }}
         onKeyDown={onChange}
+        onKeyPress={handleKeyPress}
       />
       
     </Search>

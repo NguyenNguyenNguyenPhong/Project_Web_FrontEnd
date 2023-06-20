@@ -11,13 +11,15 @@ import RightTooltip from "./RightTooltip/RightTooltip";
 import SearchBar from "./SearchBar/SearchBar";
 import CartTooltip from "./CartTooltip/CartTooltip";
 import Categories from "./Categories/Categories";
+import { Link, useNavigate } from 'react-router-dom';
+
 const udemyBusinessMessage =
   "Get your team access to over 6,000 top Udemy courses, anytime, anywhere.";
 const techOnUdemy =
   "Turn what you know into an opportunity and reach millions around the world.";
 const Navigation = ({onSearch}) => {
 
-
+  const navigate = useNavigate();
   const RightTooltipWithStyle = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))(({ theme }) => ({
@@ -46,6 +48,14 @@ const Navigation = ({onSearch}) => {
       const input = event.target.value;
       console.log(input)
       onSearch(input);
+      
+    }
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      // Navigate to the desired URL when Enter is pressed
+      navigate(`/search`);;
     }
   };
 
