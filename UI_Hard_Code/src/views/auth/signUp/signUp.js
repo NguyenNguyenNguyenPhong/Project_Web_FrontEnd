@@ -33,6 +33,7 @@ export default function SignUp() {
       await signUp(inForSignup)
       .then((res) => {
         console.log('res signUp', res)
+        redirectSignIn()
       })
       console.log('ok')
     }

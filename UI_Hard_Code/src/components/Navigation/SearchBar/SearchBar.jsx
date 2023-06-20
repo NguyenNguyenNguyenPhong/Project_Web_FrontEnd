@@ -1,7 +1,7 @@
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
-import React, { useState } from 'react';
+import React  from 'react';
 
 const SearchBar = ({onChange}) => {
   
