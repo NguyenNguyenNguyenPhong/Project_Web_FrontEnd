@@ -12,7 +12,6 @@ export function getCourseDetail(id) {
     })
 }
 export function getSegmentList(courseId) {
-    console.log('segment api đây', courseId)
     return request({
         url: `/course-segments/course/${courseId}`,
         method: 'GET',
@@ -24,3 +23,25 @@ export function getDocList(courseId) {
         method: 'GET',
     })
 }
+export function createCourse(data) {
+    return request({
+        url: '/course',
+        method: 'post',
+        data
+    })
+}
+export function updateCourse(data) {
+    return request({
+        url: '/course',
+        method: 'put',
+        data
+    })
+}
+export function deleteCourse(id) {
+    console.log(id)
+    return request({
+        url: `/courses/${id}`,
+        method: 'delete',
+    })
+}
+

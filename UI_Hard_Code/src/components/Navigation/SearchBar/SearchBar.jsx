@@ -1,8 +1,9 @@
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 
 const SearchBar = ({onChange}) => {
   const navigate = useNavigate();
