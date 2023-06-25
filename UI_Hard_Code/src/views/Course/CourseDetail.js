@@ -80,7 +80,7 @@ const CourseDetail = () => {
 
                     <Grid item className={classes.right}>
                         <Paper elevation ={0}>
-                           <CourseDescribe data = {productInfor}/>
+                           <CourseDescribe data = {productInfor} action = 'Đăng ký học'/>
                         </Paper> 
                         <Paper elevation ={0}>
                             {/* <AddToCart data = {productInfor}/> */}
