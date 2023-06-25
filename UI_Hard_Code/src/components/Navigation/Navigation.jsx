@@ -56,6 +56,9 @@ const Navigation = ({onSearch}) => {
   const navigateBlog = () => {
     navigate('/blog')
   }
+  const redirectCreateCourse = () => {
+    navigate('/create-course')
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -113,7 +116,7 @@ const Navigation = ({onSearch}) => {
               }
               placement="bottom-end"
             >
-              <span>Teach on Bk sera</span>
+              <span onClick={redirectCreateCourse}>Teach on Bk sera</span>
             </RightTooltipWithStyle>
           </MenuButtom>
           <MenuButtom>

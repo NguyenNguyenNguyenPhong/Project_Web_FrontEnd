@@ -4,6 +4,8 @@ import CourseDetail from '../Course/CourseDetail';
 import HomeBody from './HomeBody';
 import HeaderContainer from '../../container/HeaderContainer';
 import FooterContainer from '../../container/FooterContainer';
+import CreateCourse from '../Course/CreateCourse';
+import TeacherInfor from '../teacher/TeacherInfor';
 
 const Home = () => {
     return (
@@ -12,7 +14,8 @@ const Home = () => {
             <Routes>
                 <Route path= "/*" element = { <HomeBody />} />
                 <Route path= "course/:id/*" element =  { <CourseDetail /> } />   
-                  
+                <Route path= "create-course" element =  { <CreateCourse /> } />
+                <Route path= "/my-infor/:id" element =  { <TeacherInfor /> } />
                 {/* <Route path= "/blog/my-blog" element =  { <MyBlog /> } />       */}
             </Routes>
             <FooterContainer />
