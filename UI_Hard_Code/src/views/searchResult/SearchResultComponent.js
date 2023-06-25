@@ -51,15 +51,17 @@ const SearchResultComponent = ({ input = "wEb" }) => {
 
     return (
         <div>
+            <h1 style = {{margin: "0px 0px 0px 30px"}}> search result for your request: </h1>
             <div className="card-container">
                 {data.map((data) => (
                     <div className="card" key = {data.courseID}>
-                        <a href='http://localhost:3000'>
+                        <a href={`http://localhost:3000/learn/course/${data.courseID}`}>
                             <img src={data.courseImg} alt="Image" className="card-image" />
                         </a>
                         <div className="card-content">
                             <h2 className="card-title">{data.courseName}</h2>
-                            <p className="card-description">{data.courseRating}</p>
+                            <p className="card-description"><strong>Đánh giá: </strong>{data.courseRating} sao</p>
+                            <p className="card-description"><strong>Mô tả: </strong>{data.courseDescription}</p>
                         </div>
                     </div>
                 )
