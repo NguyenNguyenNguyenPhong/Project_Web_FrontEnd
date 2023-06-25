@@ -11,6 +11,7 @@ import RightTooltip from "./RightTooltip/RightTooltip";
 import SearchBar from "./SearchBar/SearchBar";
 import CartTooltip from "./CartTooltip/CartTooltip";
 import Categories from "./Categories/Categories";
+import { useNavigate } from 'react-router-dom';
 const udemyBusinessMessage =
   "Get your team access to over 6,000 top Udemy courses, anytime, anywhere.";
 const techOnUdemy =
@@ -48,6 +49,13 @@ const Navigation = ({onSearch}) => {
       onSearch(input);
     }
   };
+  const navigate = useNavigate();
+  const navigateHome = () => {
+    navigate('/')
+  }
+  const navigateBlog = () => {
+    navigate('/blog')
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -67,6 +75,7 @@ const Navigation = ({onSearch}) => {
               alt="BK sera"
               width="91"
               height="34"
+              onClick={navigateHome}
             />
           </Box>
           <MenuButtom>
@@ -109,6 +118,16 @@ const Navigation = ({onSearch}) => {
           </MenuButtom>
           <MenuButtom>
             <RightTooltipWithStyle
+              title={
+                <RightTooltip text={techOnUdemy} buttonMessage="Learn more" />
+              }
+              placement="bottom-end"
+            >
+              <span onClick={navigateBlog}>Blog</span>
+            </RightTooltipWithStyle>
+          </MenuButtom>
+          <MenuButtom>
+            <RightTooltipWithStyle
               title={<CartTooltip />}
               placement="bottom-end"
             >
@@ -122,10 +141,11 @@ const Navigation = ({onSearch}) => {
                   color="white"
                   height="4rem"
                   width="8rem"
+                  link = "/signIn"
                 >
                   Log in
                 </LinkButton>
-                <LinkButton fontSize="1.4rem" height="4rem" width="8rem">
+                <LinkButton fontSize="1.4rem" height="4rem" width="8rem" link = "/signUp">
                   Sign up
                 </LinkButton>
               </>
