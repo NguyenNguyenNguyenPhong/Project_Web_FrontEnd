@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getTeacherDetail } from '../../api/teacher/teacher';
+import { getTeacherDetail, signTeacher } from '../../api/teacher/teacher';
 import { Box, TextField } from '@material-ui/core';
 const style = {
     // position: 'absolute',
@@ -7,7 +7,7 @@ const style = {
     // left: '50%',
     // transform: 'translate(-50%, -50%)',
     margin: '20px auto',
-    width: 1000,
+    width: 400,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -15,7 +15,7 @@ const style = {
   };
 const TeacherInfor = () => {
     const id = '1'
-    const [courseImg, setCourseImg] = useState('')
+    const [courseImg, setCourseImg] = useState('https://tse4.mm.bing.net/th?id=OIP.fbV7ugqdiq1oe6_AZzf1owHaHP&pid=Api&P=0&h=180')
     const [fullName, setFullName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
     const [intro, setIntro] = useState('')
@@ -53,8 +53,18 @@ const TeacherInfor = () => {
           reader.readAsDataURL(file);
         }
       };
-    const  fnUpdateTeacher = () => {
-
+    const  fnsignTeacher = async () => {
+        const teacherInfor = {
+            fullName,
+            phoneNumber,
+            img: courseImg,
+            intro
+        }
+        await signTeacher(teacherInfor)
+        .then((res) => {
+            console.log(res)
+            alert('You signed teacher success')
+        })
     }
      return (
         <div>
@@ -66,17 +76,17 @@ const TeacherInfor = () => {
             <input onChange={courseImgChange} type="file" id="avartarInput" style={{display: 'none',}} />
             </div>
             <div className="" style={{padding: '10px 0px', margin: '10px 0px'}}>
-            <TextField fullWidth  label="course name" value={fullName} variant="outlined" onChange={(e) => {setFullName(e.target.value)}} />
+            <TextField fullWidth  label="name" value={fullName} variant="outlined" onChange={(e) => {setFullName(e.target.value)}} />
             </div>
             <div className="">
-            <TextField fullWidth style={{padding: '10px 0px', margin: '10px 0px'}}  label="course description" value={phoneNumber} variant="outlined" onChange={(e) => {setPhoneNumber(e.target.value)}} />
+            <TextField fullWidth style={{padding: '10px 0px', margin: '10px 0px'}}  label="phone" value={phoneNumber} variant="outlined" onChange={(e) => {setPhoneNumber(e.target.value)}} />
             </div>
             <div className="">
             {/* <TextField fullWidth style={{padding: '10px 0px', margin: '10px 0px'}} label="course cost" value={intro} variant="outlined" onChange={(e) => {setIntro(e.target.value)}} /> */}
-            <textarea  label="intro" value={intro} onChange={(e) => {setIntro(e.target.value)}} />
+            <textarea  style={{padding: '10px 0px', margin: '10px 0px', width: '100%'}} placeholder='intro'  label="intro" value={intro} onChange={(e) => {setIntro(e.target.value)}} />
             </div>
             <div className="">
-              <button style={{backgroundColor: '#cccccc', padding: '12px', border:'none', color: 'blue'}} onClick={fnUpdateTeacher}>Update teacher</button>
+              <button style={{backgroundColor: '#cccccc', padding: '12px', border:'none', color: 'blue'}} onClick={fnsignTeacher}>sign teacher</button>
             </div>
           </Box>
         </div>
