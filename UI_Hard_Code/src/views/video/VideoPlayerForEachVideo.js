@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation'
 import FooterContainer from './../../container/FooterContainer';
 import axios from 'axios';
-import { Link, useHistory } from 'react-router-dom';
+// import { Link, useHistory } from 'react-router-dom';
 
 const VideoContainer = () => {
   const { id, videoid } = useParams();

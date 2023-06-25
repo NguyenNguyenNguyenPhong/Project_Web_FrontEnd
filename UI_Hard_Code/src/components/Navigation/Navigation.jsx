@@ -60,7 +60,7 @@ const Navigation = ({onSearch}) => {
       navigate(`/search`);;
     }
   };
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const navigateHome = () => {
     navigate('/')
   }
@@ -69,6 +69,10 @@ const Navigation = ({onSearch}) => {
   }
   const redirectCreateCourse = () => {
     navigate('/create-course')
+  }
+
+  const redirectSignTeacher = () => {
+    navigate('/sign-in-teacher')
   }
 
   return (
@@ -127,7 +131,17 @@ const Navigation = ({onSearch}) => {
               }
               placement="bottom-end"
             >
-              <span onClick={redirectCreateCourse}>Teach on Bk sera</span>
+              <span onClick={redirectCreateCourse}>Your created course</span>
+            </RightTooltipWithStyle>
+          </MenuButtom>
+          <MenuButtom>
+            <RightTooltipWithStyle
+              title={
+                <RightTooltip text={techOnUdemy} buttonMessage="Learn more" />
+              }
+              placement="bottom-end"
+            >
+              <span onClick={redirectSignTeacher}>sign teacher</span>
             </RightTooltipWithStyle>
           </MenuButtom>
           <MenuButtom>
