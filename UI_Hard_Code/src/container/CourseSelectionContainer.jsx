@@ -10,7 +10,7 @@ import { dataScience } from "../data/course-selection-data/data";
 const initState = {
   name: "Python",
   description:
-    "Take one of Udemy’s range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. You’ll learn how to build everything from games to sites to apps. Choose from a range of courses that will...",
+    "Take one of Bk sera’s range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. You’ll learn how to build everything from games to sites to apps. Choose from a range of courses that will...",
 };
 
 const contentReducer = (state, action) => {
@@ -20,7 +20,7 @@ const contentReducer = (state, action) => {
         name: "Python",
         title: "Expand your career opportunities with Python",
         description:
-          "Take one of Udemy’s range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. You’ll learn how to build everything from games to sites to apps. Choose from a range of courses that will...",
+          "Take one of Bk sera’s range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. You’ll learn how to build everything from games to sites to apps. Choose from a range of courses that will...",
       };
     case "JS":
       return {
@@ -41,7 +41,7 @@ const contentReducer = (state, action) => {
         name: "Excel",
         title: "Analyze and visualize data with Excel",
         description:
-          "Take a Microsoft Excel course from Udemy, and learn how to use this industry-standard software. Real-world experts will show you the basics like how to organize data into sheets, rows and columns, and advanced techniques like creating complex dynamic formulas. Both small businesses and large companies use Excel to...",
+          "Take a Microsoft Excel course from Bk sera, and learn how to use this industry-standard software. Real-world experts will show you the basics like how to organize data into sheets, rows and columns, and advanced techniques like creating complex dynamic formulas. Both small businesses and large companies use Excel to...",
       };
     case "DataScience":
       return {

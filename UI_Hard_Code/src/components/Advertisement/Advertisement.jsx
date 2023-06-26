@@ -145,7 +145,7 @@ const Advertisement = () => {
             <AdvertisementImg src="/images/advertisement/instructor-2x-v3.jpeg" />
             <Description>
               <DescriptionHeading>Become an instructor</DescriptionHeading>
-              <DescriptionPara>Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.</DescriptionPara>
+              <DescriptionPara>Instructors from around the world teach millions of students on Bk sera. We provide the tools and skills to teach what you love.</DescriptionPara>
               <div>
                 <LinkButton height='4.8rem'>Start teaching today</LinkButton>
               </div>
@@ -185,10 +185,11 @@ const Advertisement = () => {
         <AdvertisementContain>
           <AdvertisementWrapper2>
             <Description2>
-              <DescriptionHeadingImg src="/images/advertisement/logo-ub.svg" />
-              <DescriptionPara>Get unlimited access to 6,000+ of Udemy’s top courses for your team. Learn and improve skills across business, tech, design, and more.</DescriptionPara>
+              <h3>Business</h3>
+              {/* <DescriptionHeadingImg src="/images/advertisement/logo-ub.svg" /> */}
+              <DescriptionPara>Get unlimited access to 6,000+ of Bk sera’s top courses for your team. Learn and improve skills across business, tech, design, and more.</DescriptionPara>
               <div>
-                <LinkButton height='4.8rem'>Get Udemy business</LinkButton>
+                <LinkButton height='4.8rem'>Get Bk sera business</LinkButton>
               </div>
             </Description2>
             <AdvertisementImg2 src="/images/advertisement/ub-2x-v3.jpeg" />
