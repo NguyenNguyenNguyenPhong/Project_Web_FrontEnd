@@ -5,11 +5,13 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './style.css';
 import { useParams } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 const SearchResultComponent = () => {
     const { id } = useParams();
     const [data, setData] = useState([]);
     const [teacherData, setTeacherData] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Fetch video data from API using Axios
@@ -52,7 +54,9 @@ const SearchResultComponent = () => {
             });
     }, []);
 
-
+    const redirectTeacherDetail = (id) => {
+        navigate(`/learn/course/${id}`)
+    }
     return (
         <div>
             <Navigation />
@@ -74,7 +78,7 @@ const SearchResultComponent = () => {
                 {data.map((data) => (
 
                     <div className="card" key={data.courseID}>
-                        <a href={`http://localhost:3000/learn/course/${data.courseID}`}>
+                        <a onClick={redirectTeacherDetail(data.courseID)}>
                             <img src={data.courseImg} alt="Image" className="card-image" />
                         </a>
                         <div className="card-content">
