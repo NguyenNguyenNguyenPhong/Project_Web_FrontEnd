@@ -16,7 +16,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const udemyBusinessMessage =
-  "Get your team access to over 6,000 top Udemy courses, anytime, anywhere.";
+  "Get your team access to over 6,000 top courses, anytime, anywhere.";
 const techOnUdemy =
   "Turn what you know into an opportunity and reach millions around the world.";
 const Navigation = ({onSearch}) => {
@@ -115,7 +115,7 @@ const Navigation = ({onSearch}) => {
               title={
                 <RightTooltip
                   text={udemyBusinessMessage}
-                  buttonMessage="Try Udemy Business"
+                  buttonMessage="Try Business"
                 />
               }
               placement="bottom-end"

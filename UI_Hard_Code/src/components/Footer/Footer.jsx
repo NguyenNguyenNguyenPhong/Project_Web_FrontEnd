@@ -99,8 +99,8 @@ const Footer = () => {
             </LanguageSelectorBtn>
           </LanguageSelectorContainer>
           <FooterListUl>
-            <FooterListLi><FooterLink href="#">Udemy Business</FooterLink></FooterListLi>
-            <FooterListLi><FooterLink href="#">Teach on Udemy</FooterLink></FooterListLi>
+            <FooterListLi><FooterLink href="#">Business</FooterLink></FooterListLi>
+            <FooterListLi><FooterLink href="#">Teach on Bk sera</FooterLink></FooterListLi>
             <FooterListLi><FooterLink href="#">Get the app</FooterLink></FooterListLi>
             <FooterListLi><FooterLink href="#">About us</FooterLink></FooterListLi>
             <FooterListLi><FooterLink href="#">Contact us</FooterLink></FooterListLi>
@@ -121,8 +121,8 @@ const Footer = () => {
           </FooterListUl>
         </FooterTop>
         <FooterBottom>
-          <div><LogoLink href="#"><LogoImg src="/images/footer/logo-udemy-inverted.svg"/></LogoLink></div>
-          <Copyright>&copy; 2022 Udemy, Inc.</Copyright>
+          {/* <div><LogoLink href="#"><LogoImg src="/images/footer/logo-udemy-inverted.svg"/></LogoLink></div> */}
+          <Copyright>&copy; 2022 Bk sera, Inc.</Copyright>
         </FooterBottom>
       </FooterSection>
     </FooterContainer>
