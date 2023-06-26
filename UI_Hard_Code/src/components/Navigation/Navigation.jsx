@@ -74,6 +74,9 @@ const Navigation = ({onSearch}) => {
   const redirectSignTeacher = () => {
     navigate('/sign-in-teacher')
   }
+  const redirectTeacher = () => {
+    navigate('/teacher')
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -142,6 +145,16 @@ const Navigation = ({onSearch}) => {
               placement="bottom-end"
             >
               <span onClick={redirectSignTeacher}>sign teacher</span>
+            </RightTooltipWithStyle>
+          </MenuButtom>
+          <MenuButtom>
+            <RightTooltipWithStyle
+              title={
+                <RightTooltip text={techOnUdemy} buttonMessage="Learn more" />
+              }
+              placement="bottom-end"
+            >
+              <span onClick={redirectTeacher}>teacher</span>
             </RightTooltipWithStyle>
           </MenuButtom>
           <MenuButtom>
