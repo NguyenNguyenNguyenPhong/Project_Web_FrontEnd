@@ -42,6 +42,7 @@ const LecturePage = () => {
       setUserID('')
       getUsers();
     } catch (error) {
+      alert('Điền sai hoặc thiếu thông tin')
       console.error('Error creating user:', error);
     }
   };

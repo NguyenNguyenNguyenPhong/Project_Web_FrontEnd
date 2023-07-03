@@ -55,6 +55,7 @@ const AdminPage = () => {
       getUsers();
       alert('thêm thành công')
     } catch (error) {
+      alert('Điền sai hoặc thiếu thông tin')
       console.error('Error creating user:', error);
     }
   };

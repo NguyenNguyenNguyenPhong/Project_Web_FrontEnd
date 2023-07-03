@@ -10,6 +10,8 @@ export default function SignUp() {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [passWord, setPassWord] = useState('')
+    const [isValidEmai, setIsValidEmail] = useState(true)
+    const [isValidPassword, setIsValidPassword] = useState(true)
     const navigate = useNavigate();
     const handleFirstNameChange = (value) => {
       setFirstName(value)
@@ -35,10 +37,30 @@ export default function SignUp() {
         console.log('res signUp', res)
         redirectSignIn()
       })
+      .catch(() => {
+        alert('Điền sai hoặc thiếu thông tin')
+      })
       console.log('ok')
     }
     const redirectSignIn= () =>  {
       navigate('/signIn')
+    }
+    const validateEmail = (value) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      emailRegex.test(value); 
+      if(emailRegex.test(value)) {
+        setIsValidEmail(true)
+      } else {
+        setIsValidEmail(false)
+      }
+    }
+    const validatePassword = (value) => {
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+      if(passwordRegex.test(value)) {
+        setIsValidPassword(true)
+      } else {
+        setIsValidPassword(false)
+      }
     }
     return (
       <div>
@@ -48,8 +70,14 @@ export default function SignUp() {
               onChange={(e) => handleFirstNameChange(e.target.value)}
             />
             <input name='lastName' placeholder='last name' className={styles.singIn_Input} value={lastName} onChange={(e) => handleLastNameChange(e.target.value)}/>
-            <input name='email' placeholder='Email' className={styles.singIn_Input} value={email} onChange={(e) => handleEmailChange(e.target.value)}/>
-            <input name='passWord' placeholder='Mật khẩu' className={styles.singIn_Input} value={passWord} onChange={(e) => handlePasswordChange(e.target.value)}/>
+            <input name='email' onBlur={(e) =>  validateEmail(e.target.value)} placeholder='Email' className={styles.singIn_Input} value={email} onChange={(e) => handleEmailChange(e.target.value)}/>
+            {!isValidEmai && (
+              <span style={{color: 'red'}}>Email invalid</span>
+            )}
+            <input onBlur={(e) =>  validatePassword(e.target.value)} name='passWord' placeholder='Mật khẩu' className={styles.singIn_Input} value={passWord} onChange={(e) => handlePasswordChange(e.target.value)}/>
+            {!isValidPassword && (
+              <span style={{color: 'red'}}>Password must include a number, a uppercase, lowercase</span>
+            )}
             <div className={styles.form_group__strength}>
                 <div className={styles.form_group__strength_indicators}></div>
                 <div className={styles.form_group__strength_indicators}></div>

@@ -46,6 +46,7 @@ const BlogPage = () => {
       getUsers();
       alert("tạo mới blog thành công")
     } catch (error) {
+      alert('Điền sai hoặc thiếu thông tin')
       console.error('Error creating user:', error);
     }
   };
