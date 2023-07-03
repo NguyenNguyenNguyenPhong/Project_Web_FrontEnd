@@ -65,6 +65,9 @@ const TeacherInfor = () => {
             console.log(res)
             alert('You signed teacher success')
         })
+        .catch(() => {
+          alert('Điền sai hoặc thiếu thông tin')
+        })
     }
      return (
         <div>

@@ -57,7 +57,11 @@ service.interceptors.response.use(
     return { data: data, headers };
   },
   (error) => {
-    console.log(error);
+     if(error.response) {
+      // alert('Điền sai hoặc thiếu thông tin')
+      console.log('fff',error.response)
+     }
+     return Promise.reject(error);
     // return { status: error.response.status, message: error.message };
     // router.push({ name: "error", params: {} });
   }

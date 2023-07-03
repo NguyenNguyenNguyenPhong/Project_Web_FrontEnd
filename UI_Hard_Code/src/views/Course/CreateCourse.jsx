@@ -104,6 +104,9 @@ const CreateCourse = () => {
           alert('Tạo course thành công')
           setChangeList(!changeList)
         })
+        .catch((error) => {
+          alert('Điền sai hoặc thiếu thông tin')
+        })
         console.log('hhh')
     }
     const courseImgChange = () => {
@@ -117,7 +120,6 @@ const CreateCourse = () => {
           setCourseImg(imageData)
           console.log(imageData);
         };
-      
         reader.readAsDataURL(file);
       }
     };
