@@ -106,7 +106,7 @@ const InputPage = ({clearCellInput, courseDescription, createdAt, lastUpdate,cat
           />
         </div>
 
-        <div>
+        {/* <div>
           <label htmlFor="userID">User ID:</label>
           <input
             type="text"
@@ -115,7 +115,7 @@ const InputPage = ({clearCellInput, courseDescription, createdAt, lastUpdate,cat
             placeholder="User ID"
             onChange={(e) => setUserID(e.target.value)}
           />
-        </div>
+        </div> */}
         {selectedUserId ? (
           <button style={{width: "10%", margin: "0% 0% 0% 50%"}} onClick={updateUser}>Update</button>
         ) : (
