@@ -20,7 +20,6 @@ service.interceptors.request.use(
       config.headers["Content-Type"] = "application/json; charset=utf-8";
     }
     const token = localStorage.getItem('token')? localStorage.getItem('token'): null
-    console.log('token', token)
     if(token) {
       config.headers["Authorization"] = 'Bearer ' + token;
     }
@@ -35,9 +34,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response) => {
     const data = !response.data.data ? response.data : response.data.data;
-    console.log('jjj', data)
     const headers = response.headers;
-    console.log('jjjjê2e', headers)
     // if(data.access_token != undefined && data.access_token != '') {
     //   localStorage.setItem('token', data.access_token)
     //   console.log('token', localStorage.getItem('token'))
@@ -59,7 +56,6 @@ service.interceptors.response.use(
   (error) => {
      if(error.response) {
       // alert('Điền sai hoặc thiếu thông tin')
-      console.log('fff',error.response)
      }
      return Promise.reject(error);
     // return { status: error.response.status, message: error.message };

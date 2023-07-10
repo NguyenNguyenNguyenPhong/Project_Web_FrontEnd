@@ -27,7 +27,6 @@ const CategoryList = () => {
       const fnGetCategoryList = async ()  =>  {
            await getCategory()
            .then((res) => {
-             console.log('category list', res)
              setCategory(res.data)
              console.log('ddd', category)
            })

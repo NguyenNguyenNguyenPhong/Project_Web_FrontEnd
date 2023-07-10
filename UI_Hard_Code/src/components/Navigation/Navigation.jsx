@@ -48,7 +48,6 @@ const Navigation = ({onSearch}) => {
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       const input = event.target.value;
-      console.log(input)
       onSearch(input);
       
     }

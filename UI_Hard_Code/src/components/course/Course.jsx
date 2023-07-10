@@ -123,7 +123,6 @@ const Course = ( {item} ) => {
   let max =5;
   const navigate = useNavigate();
   const handleClick = () => {
-    console.log("redirect detail component")
     navigate(`/course/${item.id}`)
   }
 
