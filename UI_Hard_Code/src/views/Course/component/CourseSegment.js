@@ -35,7 +35,6 @@ const CourseSegment = ({courseId}) => {
     const navigate = useNavigate();
     useEffect(() => {
         // Mã lệnh được thực thi chỉ một lần khi component được render lần đầu tiên
-        console.log('useEffect được gọi chỉ một lần');
         fnGetSegmentList()
       }, [courseId]);
       const fnGetSegmentList = async ()  =>  {

@@ -66,7 +66,6 @@ const CourseDescribe = ({data, action,courseItem = {}, onEvent = () => {}}) => {
         document.getElementById('avartarInput').click()
     }
     const fnCreateCourse = async () => {
-        console.log('ok')
           const course = {
             courseID: courseItem.courseID,
             courseName,

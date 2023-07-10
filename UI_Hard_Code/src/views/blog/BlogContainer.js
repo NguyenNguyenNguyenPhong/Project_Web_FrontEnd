@@ -24,7 +24,6 @@ const BlogContainer = () => {
                 console.error('Error fetching video data:', error);
             });
     }, []);
-    console.log(data)
 
     return (
 

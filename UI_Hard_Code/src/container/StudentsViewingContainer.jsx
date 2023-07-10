@@ -72,7 +72,6 @@ const CopyStudentsViewingContainer = () => {
   const [courseList, setCourseList] = useState([])
   useEffect(() => {
         // Mã lệnh được thực thi chỉ một lần khi component được render lần đầu tiên
-        console.log('useEffect được gọi chỉ một lần');
         fnGetCourseList()
       }, []);
 

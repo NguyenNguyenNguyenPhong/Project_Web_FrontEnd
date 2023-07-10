@@ -58,13 +58,11 @@ const CreateCourse = () => {
     const  [changeList, setChangeList] = useState(false)
     useEffect(() => {
       // Mã lệnh được thực thi chỉ một lần khi component được render lần đầu tiên
-      console.log('useEffect được gọi chỉ một lần');
       fngetCourseList()
     }, [changeList]);
     const fngetCourseList = async ()  =>  {
       await getCourseList()
       .then((res) => {
-        console.log('course detail', res.data)
         const myCourse = res.data.filter((ele) => ele.userID == 3)
         setListCourse(myCourse)
       })

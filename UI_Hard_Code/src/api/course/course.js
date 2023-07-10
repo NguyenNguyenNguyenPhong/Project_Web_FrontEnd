@@ -38,7 +38,6 @@ export function updateCourse(data) {
     })
 }
 export function deleteCourse(id) {
-    console.log(id)
     return request({
         url: `/courses/${id}`,
         method: 'delete',
